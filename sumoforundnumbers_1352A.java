@@ -1,7 +1,6 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class sumoforundnumbers_1352A {
-    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -9,18 +8,29 @@ public class sumoforundnumbers_1352A {
 
         while (t-- > 0) {
             int n = sc.nextInt();
-            int m = sc.nextInt();
 
-            int sum = 0;
+            ArrayList<Integer> list = new ArrayList<>();
 
-            for (int i = 1; i <= n; i++) {
-                for (int j = 1; j <= m; j++) {
-                    sum += i * j;
+            int place = 1;
+
+            while (n > 0) {
+                int digit = n % 10;
+
+                if (digit != 0) {
+                    list.add(digit * place);
                 }
+
+                place *= 10;
+                n /= 10;
             }
 
-            System.out.println(sum);
+            System.out.println(list.size());
+
+            for (int x : list) {
+                System.out.print(x + " ");
+            }
+
+            System.out.println();
         }
     }
-
 }
