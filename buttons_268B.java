@@ -10,4 +10,4 @@ public class buttons_268B {
         System.out.println(ans);
         sc.close();
     }
-}
+}   
