@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class yetanothercontructive {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int m = sc.nextInt();
+
+            if (k > m) {
+                System.out.println("NO");
+                continue;
+            }
+
+            System.out.println("YES");
+
+            for (int i = 1; i <= n; i++) {
+                if (i % k == 0)
+                    System.out.print((m - k + 1) + " ");
+                else
+                    System.out.print("1 ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
